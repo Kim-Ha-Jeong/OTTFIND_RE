@@ -1,4 +1,4 @@
-package com.example.ottfind;
+package toyproject.ottfind;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
