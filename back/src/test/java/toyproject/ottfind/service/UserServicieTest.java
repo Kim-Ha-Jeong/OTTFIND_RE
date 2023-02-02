@@ -56,7 +56,7 @@ class UserServiceTest {
             System.out.println("name = " + u.getUsername());
         }
 
-        Assertions.assertThat(userList.size()).isEqualTo(4);
+        assertThat(userList.size()).isEqualTo(4);
     }
 
 }
