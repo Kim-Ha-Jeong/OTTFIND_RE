@@ -12,7 +12,7 @@ public class Film {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Getter
+    @Getter @Setter
     @Column(nullable = false, length = 200)
     private String title;
 
