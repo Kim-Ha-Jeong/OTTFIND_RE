@@ -40,8 +40,16 @@ public class Film {
     @Column(nullable = false, length = 45)
     private String director;
 
+    @Getter @Setter
+    @Column(nullable = false, length = 45)
+    private String country;
+
+    @Setter
+    @Column(nullable = false)
+    private String content;
+
     @Setter
     @ManyToOne(cascade = {CascadeType.REFRESH, CascadeType.REMOVE})
-    @JoinColumn(name = "genre_id")
+    @JoinColumn(name = "genre_id", referencedColumnName = "id")
     private Genre genre;
 }

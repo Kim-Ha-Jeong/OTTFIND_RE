@@ -14,7 +14,7 @@ public class FilmService {
 
     public void validateDuplicateFilm(Film film){
         List<Film> result = filmRepository.findByTitle(film.getTitle());
-
+        System.out.println("result = " + result);
         if(result.size() == 0) return;
 
         for(Film data : result){
