@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import toyproject.ottfind.domain.Genre;
-import toyproject.ottfind.repository.GenreRepository;
+import toyproject.ottfind.repository.GenreInterface;
 
 import javax.transaction.Transactional;
 
@@ -19,7 +19,7 @@ public class GenreServiceTest {
     GenreService genreService;
 
     @Autowired
-    GenreRepository genreRepository;
+    GenreInterface genreRepository;
 
     @Test
     void 장르_생성 () {

@@ -3,15 +3,14 @@ package toyproject.ottfind.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import toyproject.ottfind.domain.Genre;
-import toyproject.ottfind.domain.User;
-import toyproject.ottfind.repository.GenreRepository;
+import toyproject.ottfind.repository.GenreInterface;
 
 @Service
 public class GenreService {
-    private final GenreRepository genreRepository;
+    private final GenreInterface genreRepository;
 
     @Autowired
-    public GenreService(GenreRepository genreRepository){
+    public GenreService(GenreInterface genreRepository){
         this.genreRepository = genreRepository;
     }
 

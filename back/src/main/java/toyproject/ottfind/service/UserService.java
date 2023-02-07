@@ -3,7 +3,7 @@ package toyproject.ottfind.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import toyproject.ottfind.domain.User;
-import toyproject.ottfind.repository.UserRepository;
+import toyproject.ottfind.repository.UserInterface;
 
 import java.util.List;
 import java.util.Optional;
@@ -11,10 +11,10 @@ import java.util.Optional;
 @Service
 public class UserService {
 
-    private final UserRepository userRepository;
+    private final UserInterface userRepository;
 
     @Autowired
-    public UserService(UserRepository userRepository){
+    public UserService(UserInterface userRepository){
         this.userRepository = userRepository;
     }
     public List<User> getAllUser() {

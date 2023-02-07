@@ -1,12 +1,11 @@
 package toyproject.ottfind.service;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 import toyproject.ottfind.domain.User;
-import toyproject.ottfind.repository.UserRepository;
+import toyproject.ottfind.repository.UserInterface;
 
 import java.util.List;
 
@@ -19,7 +18,7 @@ class UserServiceTest {
     @Autowired
     UserService userService;
     @Autowired
-    UserRepository userRepository;
+    UserInterface userRepository;
 
     @Test
     void 회원가입() throws Exception{

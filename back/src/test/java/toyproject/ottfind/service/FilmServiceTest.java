@@ -5,8 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import toyproject.ottfind.domain.Film;
 import toyproject.ottfind.domain.Genre;
-import toyproject.ottfind.repository.FilmRepository;
-import toyproject.ottfind.repository.GenreRepository;
+import toyproject.ottfind.repository.FilmInterface;
+import toyproject.ottfind.repository.GenreInterface;
 
 import javax.transaction.Transactional;
 
@@ -18,13 +18,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @Transactional
 public class FilmServiceTest {
 
-    private final GenreRepository genreRepository;
+    private final GenreInterface genreRepository;
     private final GenreService genreService;
     private final FilmService filmService;
-    private final FilmRepository filmRepository;
+    private final FilmInterface filmRepository;
 
     @Autowired
-    public FilmServiceTest(FilmService filmService, FilmRepository filmRepository, GenreService genreService, GenreRepository genreRepository){
+    public FilmServiceTest(FilmService filmService, FilmInterface filmRepository, GenreService genreService, GenreInterface genreRepository){
         this.filmService = filmService;
         this.filmRepository = filmRepository;
         this.genreService = genreService;
