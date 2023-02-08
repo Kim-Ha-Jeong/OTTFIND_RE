@@ -1,6 +1,7 @@
 package toyproject.ottfind.service;
 
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import toyproject.ottfind.domain.Film;
 import toyproject.ottfind.repository.FilmInterface;
@@ -8,10 +9,13 @@ import toyproject.ottfind.repository.FilmInterface;
 import java.util.List;
 
 @Service
-@AllArgsConstructor
 public class FilmService {
     private final FilmInterface filmRepository;
 
+    @Autowired
+    public FilmService(FilmInterface filmRepository){
+        this.filmRepository = filmRepository;
+    }
     public void validateDuplicateFilm(Film film){
         List<Film> result = filmRepository.findByTitle(film.getTitle());
         System.out.println("result = " + result);
