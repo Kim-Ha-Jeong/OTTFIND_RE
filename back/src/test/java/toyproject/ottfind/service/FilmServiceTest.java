@@ -10,6 +10,7 @@ import toyproject.ottfind.repository.GenreInterface;
 
 import javax.transaction.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -63,5 +64,16 @@ public class FilmServiceTest {
 
         Film findFilm = filmRepository.findById(id).get();
         assertEquals(id, findFilm.getId());
+    }
+
+    @Test
+    void 영화_모두_조회() {
+        List<Film> films = filmService.getAllFilms();
+
+        for(Film f : films){
+            System.out.println("title = " + f.getTitle());
+        }
+
+        assertEquals(films.size(), 13);
     }
 }
