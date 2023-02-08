@@ -2,10 +2,11 @@ package toyproject.ottfind.domain;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "review")
 @NoArgsConstructor
 public class Review {
     @Id
@@ -13,16 +14,16 @@ public class Review {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Getter
+    @Getter @Setter
     @Column(nullable = false, length = 100)
     private String content;
 
-    @Getter
+    @Getter @Setter
     @ManyToOne
     @JoinColumn(name = "film_id", referencedColumnName = "id")
     private Film film;
 
-    @Getter
+    @Getter @Setter
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;
