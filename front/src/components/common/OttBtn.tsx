@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const OttBtn = ({ name, opt, onChange }: BtnProps) => {
   return (
-    <Wrapper onClick={() => onChange(name, opt)}>
+    <Wrapper onClick={onChange}>
       <Img opt={opt} src={`/ott/${name}.png`} />
       <P>{opt !== '정기권' ? opt : ''}</P>
     </Wrapper>
@@ -12,7 +12,7 @@ const OttBtn = ({ name, opt, onChange }: BtnProps) => {
 type BtnProps = {
   name: string;
   opt: string;
-  onChange: (name: string, opt: string) => void;
+  onChange: () => void;
 };
 
 type SizeType = {

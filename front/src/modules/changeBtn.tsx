@@ -1,21 +1,18 @@
 const CHANGE = 'change' as const;
 
-export const change = (name: string, opt: string) => ({
+export const change = (current: string) => ({
   type: CHANGE,
-  name,
-  opt,
+  current,
 });
 
 type payloadState = {
-  name: string;
-  opt: string;
+  current: string;
 };
 
 type changeAction = ReturnType<typeof change>;
 
 const initialState: payloadState = {
-  name: '',
-  opt: '',
+  current: '',
 };
 
 const changeBtn = (
@@ -24,9 +21,9 @@ const changeBtn = (
 ) => {
   switch (action.type) {
     case CHANGE:
-      return { ...state, name: action.name, opt: action.opt };
+      return { ...state, current: action.current };
     default:
-      return () => console.log('undefined');
+      return state;
   }
 };
 
