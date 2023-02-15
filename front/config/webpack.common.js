@@ -13,6 +13,11 @@ module.exports = {
         use: 'babel-loader',
         exclude: /node_modules/,
       },
+      {
+        test: /\.(png|jpg)$/,
+        use: 'file-loader',
+        exclude: /node_modules/,
+      },
     ],
   },
   plugins: [
@@ -27,6 +32,15 @@ module.exports = {
     alias: {
       '@': path.resolve(__dirname, '../src/'),
     },
-    extensions: ['.js', '.ts', '.jsx', '.tsx', '.css', '.json'],
+    extensions: [
+      '.js',
+      '.ts',
+      '.jsx',
+      '.tsx',
+      '.css',
+      '.json',
+      '.png',
+      '.jpeg',
+    ],
   },
 };

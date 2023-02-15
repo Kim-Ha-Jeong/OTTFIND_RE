@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 import OttBtnContainer from '@/container/OttBtnContainer';
+import HeaderContainer from '@/container/HeaderContainer';
 
 const Main = () => {
   const ott = ['Netflix', 'Watcha', 'Wavve', 'Tving', 'Disney'];
   return (
     <Wrapper>
-      {/* <Header /> */}
+      <HeaderContainer />
       <FilterWrapper>
         {ott.map((ele, idx) => (
           <OttBtnContainer name={ele} opt='' key={idx} />
