@@ -1,10 +1,8 @@
-import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '@/modules';
+import { useDispatch } from 'react-redux';
 import { change } from '@/modules/changeBtn';
 import OttBtn from '@/components/common/OttBtn';
 
 const OttBtnContainer = ({ name, opt }: BtnProps) => {
-  const current = useSelector((state: RootState) => state.changeBtn.current);
   const dispatch = useDispatch();
 
   const onChange = () => {

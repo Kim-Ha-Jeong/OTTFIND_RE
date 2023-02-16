@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import logo from '@/images/logo.png';
 import userIcon from '@/images/user-icon.png';
 
+import LinkContainer from '@/container/LinkContainer';
+
 const Header = ({ moveHome }: propsType) => {
   const linkArr = ['홈', '영화', '드라마'];
   const navigate = useNavigate();
@@ -16,9 +18,9 @@ const Header = ({ moveHome }: propsType) => {
     <Wrapper>
       <LogoImg src={logo} onClick={moveHome} />
       <LinkWrapper>
-        {/* {linkArr.map((ele, idx) => (
-          <Link key={idx} id={ele} type={ele} />
-        ))} */}
+        {linkArr.map((ele, idx) => (
+          <LinkContainer key={idx} id={ele} />
+        ))}
       </LinkWrapper>
       {/* <SearchBar /> */}
       <UserImg src={userIcon} onClick={moveHandler} />
