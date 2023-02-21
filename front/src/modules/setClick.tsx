@@ -1,17 +1,3 @@
-// const searchState = atom({
-//     key: "search",
-//     default: {
-//       enter: false,
-//       title: "",
-//     },
-//   });
-
-//   const emptyArr: any[] = [];
-//   const prevState = atom({
-//     key: "prev",
-//     default: { find: false, data: emptyArr },
-//   });
-
 const SET_CLICK = 'setClick' as const;
 
 export const set = (click: boolean) => ({

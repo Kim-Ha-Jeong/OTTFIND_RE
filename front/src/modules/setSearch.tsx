@@ -1,11 +1,3 @@
-// const searchState = atom({
-//     key: "search",
-//     default: {
-//       enter: false,
-//       title: "",
-//     },
-//   });
-
 const SEARCH = 'search' as const;
 
 export const set = (enter: boolean, title: string) => ({
