@@ -5,7 +5,8 @@ import logo from '@/images/logo.png';
 import userIcon from '@/images/user-icon.png';
 
 import LinkContainer from '@/container/LinkContainer';
-import SearchBar from '@/components/search-bar/Searchbar';
+import SearchBar from '@/components/search-bar/SearchBar';
+import SearchModal from '@/components/search-bar/SearchModal';
 
 const Header = ({ moveHome }: propsType) => {
   const linkArr = ['홈', '영화', '드라마'];
@@ -25,7 +26,7 @@ const Header = ({ moveHome }: propsType) => {
       </LinkWrapper>
       <SearchBar />
       <UserImg src={userIcon} onClick={moveHandler} />
-      {/* <SearchModal /> */}
+      <SearchModal />
     </Wrapper>
   );
 };

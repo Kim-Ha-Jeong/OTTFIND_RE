@@ -50,10 +50,10 @@ const SearchBar = () => {
     <Wrapper ref={inputRef}>
       <Input
         placeholder='영화나 드라마 제목을 입력하세요'
-        onChange={onChangeHandler}
-        onKeyPress={onKeyPressHandler}
         onClick={onClickHandler}
-      ></Input>
+        onKeyPress={onKeyPressHandler}
+        onChange={onChangeHandler}
+      />
     </Wrapper>
   );
 };

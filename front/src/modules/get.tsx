@@ -1,8 +1,10 @@
 import axios from 'axios';
 
+const API = process.env.API_URL;
+
 const get = ({ pathname, params }: propsType) => {
   try {
-    const result = axios.get(`${process.env.API_URL}/${pathname}`, {
+    const result = axios.get(`${API}/${pathname}`, {
       params,
     });
     return result;

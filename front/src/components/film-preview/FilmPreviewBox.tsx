@@ -1,9 +1,11 @@
-import React from 'react';
-//import { useRecoilValue } from "recoil";
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 
 import { RootState } from '@/modules';
+
+import FilmPreview from '@/components/film-preview/FilmPreview';
+import None from '@/components/film-preview/None';
+import More from '@/components/film-preview/More';
 
 const FilmPreviewBox = ({ data, title }: PropsType) => {
   const film = useSelector((state: RootState) => state.setFilm);
@@ -11,14 +13,14 @@ const FilmPreviewBox = ({ data, title }: PropsType) => {
 
   return (
     <Wrapper>
-      {/* {films !== '' ? (
-          films.map((ele: any, idx: number) => (
-            <FilmPreview film={ele} key={idx} />
-          ))
-        ) : (
-          <None />
-        )}
-        {film.find ? <More title={title} /> : ''} */}
+      {films !== '' ? (
+        films.map((ele: any, idx: number) => (
+          <FilmPreview film={ele} key={idx} />
+        ))
+      ) : (
+        <None />
+      )}
+      {film.find ? <More title={title} /> : ''}
     </Wrapper>
   );
 };
