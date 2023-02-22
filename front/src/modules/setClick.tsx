@@ -1,6 +1,6 @@
 const SET_CLICK = 'setClick' as const;
 
-export const set = (click: boolean) => ({
+export const setCLICK = (click: boolean) => ({
   type: SET_CLICK,
   click,
 });
@@ -9,7 +9,7 @@ type state = {
   click: boolean;
 };
 
-type setClickAction = ReturnType<typeof set>;
+type setClickAction = ReturnType<typeof setCLICK>;
 
 const initialState: state = {
   click: false,

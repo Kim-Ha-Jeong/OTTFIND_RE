@@ -1,6 +1,6 @@
 const SET_FILM = 'setFilm' as const;
 
-export const set = (find: boolean, data: object[]) => ({
+export const setFILM = (find: boolean, data: object[]) => ({
   type: SET_FILM,
   find,
   data,
@@ -11,7 +11,7 @@ type state = {
   data: object[];
 };
 
-type setFilmAction = ReturnType<typeof set>;
+type setFilmAction = ReturnType<typeof setFILM>;
 
 const initialState: state = {
   find: false,

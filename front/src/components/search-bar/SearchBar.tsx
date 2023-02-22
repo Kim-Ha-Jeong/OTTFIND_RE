@@ -1,23 +1,31 @@
 import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+
+import { RootState } from '@/modules';
+import { setCLICK } from '@/modules/setClick';
+import { setSEARCH } from '@/modules/setSearch';
+
 const SearchBar = () => {
-  const [click, setClick] = useState(false);
-  const [search, setSearch] = useState({ enter: false, title: '' });
+  const click = useSelector((state: RootState) => state.setClick.click);
+  const search = useSelector((state: RootState) => state.setSearch);
   const inputRef = useRef<HTMLDivElement>(null);
+  const dispatch = useDispatch();
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearch({ enter: false, title: e.target.value });
+    dispatch(setSEARCH(false, e.target.value));
   };
 
   const onKeyPressHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter') setSearch({ enter: true, title: search.title });
+    if (e.key === 'Enter') dispatch(setSEARCH(true, search.title));
   };
 
   const onClickHandler = () => {
     click
-      ? (setClick(false), setSearch({ enter: false, title: '' }))
-      : setClick(true);
+      ? (dispatch(setCLICK(false)), dispatch(setSEARCH(false, '')))
+      : dispatch(setCLICK(true));
   };
 
   const outSideClickHandler = (e: any) => {
@@ -25,8 +33,8 @@ const SearchBar = () => {
       inputRef.current === null ||
       (inputRef.current && !inputRef.current.contains(e.currentTarget))
     ) {
-      setClick(false);
-      setSearch({ enter: false, title: '' });
+      dispatch(setCLICK(false));
+      dispatch(setSEARCH(false, ''));
     }
   };
 

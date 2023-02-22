@@ -1,6 +1,6 @@
 const SEARCH = 'search' as const;
 
-export const set = (enter: boolean, title: string) => ({
+export const setSEARCH = (enter: boolean, title: string) => ({
   type: SEARCH,
   enter,
   title,
@@ -11,7 +11,7 @@ type state = {
   title: string;
 };
 
-type setSearchAction = ReturnType<typeof set>;
+type setSearchAction = ReturnType<typeof setSEARCH>;
 
 const initialState: state = {
   enter: false,
