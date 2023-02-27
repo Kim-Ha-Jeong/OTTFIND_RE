@@ -8,7 +8,6 @@ const OttBtnContainer = ({ name, opt }: BtnProps) => {
   const onChange = () => {
     if (opt === '') {
       dispatch(change(name));
-      //console.log(current);
     }
   };
 

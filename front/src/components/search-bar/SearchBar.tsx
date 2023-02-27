@@ -9,7 +9,7 @@ import { setCLICK } from '@/modules/setClick';
 import { setSEARCH } from '@/modules/setSearch';
 
 const SearchBar = () => {
-  const click = useSelector((state: RootState) => state.setClick.click);
+  const click = useSelector((state: RootState) => state.setClick);
   const search = useSelector((state: RootState) => state.setSearch);
   const inputRef = useRef<HTMLDivElement>(null);
   const dispatch = useDispatch();

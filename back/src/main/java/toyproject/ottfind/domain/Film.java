@@ -16,23 +16,23 @@ public class Film {
     @Column(nullable = false, length = 200)
     private String title;
 
-    @Setter
+    @Getter @Setter
     @Column(nullable = false, length = 300, columnDefinition = "default '정보 없음'")
     private String poster_url;
 
-    @Setter
+    @Getter @Setter
     @Column(nullable = false, length = 45)
     private String type;
 
-    @Setter
+    @Getter @Setter
     @Column(nullable = false)
     private Integer year;
 
-    @Setter
+    @Getter @Setter
     @Column(nullable = false, columnDefinition = "default -1")
     private Integer time;
 
-    @Setter
+    @Getter @Setter
     @Column(nullable = false, columnDefinition = "default -1")
     private Integer season;
 
@@ -44,11 +44,11 @@ public class Film {
     @Column(nullable = false, length = 45)
     private String country;
 
-    @Setter
+    @Getter @Setter
     @Column(nullable = false)
     private String content;
 
-    @Setter
+    @Getter @Setter
     @ManyToOne(cascade = {CascadeType.REFRESH, CascadeType.REMOVE})
     @JoinColumn(name = "genre_id", referencedColumnName = "id")
     private Genre genre;
